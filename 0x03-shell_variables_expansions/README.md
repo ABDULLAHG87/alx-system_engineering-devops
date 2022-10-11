@@ -1,0 +1,1 @@
+This project is created for the Shell, init files, variables and Expansion
