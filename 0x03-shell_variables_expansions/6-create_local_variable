@@ -1,2 +1,2 @@
 #!/bin/bash
-Name , Value = "BEST", "School"
+BEST = "School"
