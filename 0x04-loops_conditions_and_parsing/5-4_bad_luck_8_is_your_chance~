@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# 4 in the chinese culture
+
+count=1
+
+while [ $count -lt 10 ]
+do
+    if [ $count -eq 4 ]
+    then
+	echo "bad luck"
+    elif [ $count -eq 8 ]
+    then
+	echo "good luck"
+    fi
+    echo "Best School"
+    ((count++))
+done
+
