@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#script to use ssh to connect to serveer using the private key
+
+ssh -i ~/.ssh/school ubuntu@18.234.168.181
