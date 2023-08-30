@@ -16,7 +16,7 @@ echo "server {
     listen      [::]:80 default_server;
     root        /etc/nginx/html;
     index       index.html index.htm;
-
+    server_name _;
     location / {
         return 200 "Hello world!";
     }
