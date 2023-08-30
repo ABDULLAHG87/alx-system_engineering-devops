@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 #updating the system
-apt-get update
-apt-get install -y nginx
+sudo apt-get update
+sudo apt-get install -y nginx
 
 #create a folder in the root folder etc
 mkdir /etc/nginx/html
@@ -15,7 +15,7 @@ echo "server {
     listen      80 default_server;
     listen      [::]:80 default_server;
     root        /etc/nginx/html;
-    index       index.html index.htm;
+    index       index.html index.htm index.nginx-debian.html;
     server_name _;
     location / {
         return 200 "Hello world!";
