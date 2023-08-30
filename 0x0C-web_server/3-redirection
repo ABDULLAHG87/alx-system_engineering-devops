@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+#upgrading ubuntun
+apt-get update
+#installing the nginx 
+apt-get install -y nginx
+
+#create a directory for the html file
+mkdir /etc/nginx/html
+# create an html file - index.html
+touch /etc/nginx/html/index.html
+
+#create content for the html file
+echo "Hello World!" > /etc/nginx/html/index.html
+
+# send the nginx configuration to 
+printf %s "server {
+    listen 80;
+    listen [::]:80 default_server;
+    root   /etc/nginx/html;
+    index  index.html index.htm;
+
+    location /redirect_me {
+        return 301 http://dalaktronixs.tech/;
+    }
+}" > /etc/nginx/sites-available/default
+
+service nginx restart
