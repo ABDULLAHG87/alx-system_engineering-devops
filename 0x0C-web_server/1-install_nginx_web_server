@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 #updating the system
-sudo apt-get update
-sudo apt-get install -y nginx
+apt-get update
+apt-get install -y nginx
 
 #create a folder in the root folder etc
 mkdir /etc/nginx/html
