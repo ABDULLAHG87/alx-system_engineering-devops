@@ -2,22 +2,9 @@
 # script to install Nginx
 
 #installation 
-sudo apt-get update
-sudo apt-get install -y nginx
+apt-get update
+#installing the ngnix module
+apt-get install -y nginx
 
-#make directory in the etc system folder
-mkdir /etc/nginx/html
-#create an index file
-touch /etc/nginx/html/index.html
-
-#echo "Hello World!" > /etc/nginx/html/index.html
-
-sudo sh -c "echo 'server{
-       listen 80;
-       server_name _;
-       location / {
-          echo \"HTTP/1.1 200 OK\nContent-Length: 12\n\nHello World!\" | nc -l -p 80 -q 1;
-    }
-}' > /etc/nginx/sites-available/default"
-
-service nginx restart
+echo "Hello World!" > /var/www/html/index.ngnix-debian.html
+service nginx start
