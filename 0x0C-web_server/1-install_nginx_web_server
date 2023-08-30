@@ -10,7 +10,7 @@ mkdir /etc/nginx/html
 #create an index file
 touch /etc/nginx/html/index.html
 
-echo "Hello World!" > /etc/nginx/html/index.html
+#echo "Hello World!" > /etc/nginx/html/index.html
 
 sudo sh -c "echo 'server{
        listen 80;
