@@ -16,6 +16,9 @@ echo "server {
      listen      [::]:80 default_server;
      root        /etc/nginx/html;
      index       index.html index.htm;
+     location / {
+     	 return 200 "Hello world!";
+     }
 }
 " > /etc/nginx/sites-available/default
 
