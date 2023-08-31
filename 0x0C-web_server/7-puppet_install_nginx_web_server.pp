@@ -1,3 +1,6 @@
+#installing of nginx with puppet
+
+
 package { 'nginx':
   ensure => installed,
 }
