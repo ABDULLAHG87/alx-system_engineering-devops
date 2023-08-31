@@ -8,19 +8,18 @@ sudo apt-get update
 sudo apt install -y nginx
 
 # Configure Nginx to listen on port 80
-sudo bash -c 'cat << EOF > /etc/nginx/sites-available/default
-server {
+sudo bash -c 'echo
+"server {
     listen 80;
+    listen [::]80 default_server;
     server_name _;
 
     location / {
         return 200 "Hello World!";
     }
-}
-EOF'
+}" > /etc/nginx/sites-available/default'
 
 # Test Nginx configuration
 sudo nginx -t
 
-# Reload Nginx (since systemctl can't be used)
 sudo service nginx restart
