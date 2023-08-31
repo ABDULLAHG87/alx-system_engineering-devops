@@ -1,15 +1,18 @@
 #installing of nginx with puppet
 
-
+#installation of nginx package
 package { 'nginx':
   ensure => installed,
 }
 
+#ensure running of nginx webserver
 service { 'nginx':
   ensure => running,
   enable => true,
 }
 
+#creating a file for listening to port 80 of the webserver
+# the file should contain return for redirection and 404 page error
 file { '/etc/nginx/sites-available/default':
   content => "
 server {
@@ -30,6 +33,7 @@ server {
   require => Package['nginx'],
 }
 
+# execute command for nginx restart
 exec { 'nginx_reload':
   command     => '/usr/sbin/service nginx reload',
   refreshonly => true,
