@@ -1,25 +1,26 @@
 #!/usr/bin/env bash
+# The script is used to setup server using nginx web server
 
-#updating the system
+# Update package list
 sudo apt-get update
-sudo apt-get install -y nginx
 
-#create a folder in the root folder etc
-mkdir /etc/nginx/html
-#create an html file called index
-touch /etc/nginx/html/index.html
-#create a content for the html file with data "Hello World"
-echo "Hello World!" > /etc/nginx/html/index.html
+# Install Nginx
+sudo apt install -y nginx
 
-echo "server {
-    listen      80 default_server;
-    listen      [::]:80 default_server;
-    root        /etc/nginx/html;
-    index       index.html index.htm index.nginx-debian.html;
+# Configure Nginx to listen on port 80
+sudo bash -c 'cat << EOF > /etc/nginx/sites-available/default
+server {
+    listen 80;
     server_name _;
-    location / {
-        return 200 "Hello world!";
-    }
-}" > /etc/nginx/sites-available/default
 
-service nginx restart
+    location / {
+        return 200 "Hello World!";
+    }
+}
+EOF'
+
+# Test Nginx configuration
+sudo nginx -t
+
+# Reload Nginx (since systemctl can't be used)
+sudo service nginx restart
