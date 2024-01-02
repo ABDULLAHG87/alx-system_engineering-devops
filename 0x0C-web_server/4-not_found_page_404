@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+# Script for configuration of nginx webserver to display 404 not found page
+
+# update package list
+sudo apt-get update
+
+# install nginx web server
+sudo apt install -y nginx
+
+# create a custom 404 html page
+echo '<!DOCTYPE html>
+<html lang=eng>
+<head>
+    <title>404 Not Found</title>
+</head>
+<body>
+    <h1>404 Not Found</h1>
+    <p>Ceci n&apos;est pas une page.</p>
+</body>
+</html>' | sudo tee /var/www/html/custom404.html > /dev/null
+
+# Configure nginx to use the custom 404 page using the sed command 
+sudo sed -i '/server_name _;/a \\n    error_page 404 /custom404.html;\n    location = /custom404.html {\n        root /var/www/html;\n        internal;\n    }' /etc/nginx/sites-available/default
+
+# Test nginx configuration
+sudo nginx -t
+
+# restarting the nginx web server
+sudo service nginx restart
