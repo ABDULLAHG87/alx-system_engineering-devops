@@ -6,4 +6,4 @@ The project introduces web stack debuggin
 
 | PROJECT | DESCRIPTION |
 |:-------:|:------------:|
-|0-nginx_likes_port_80 | A bash cript to listen to a port 80|
+|(0-nginx_likes_port_80)[0x0E-web_stack_debugging_1/0-nginx_likes_port_80] | A bash cript to listen to a port 80|
