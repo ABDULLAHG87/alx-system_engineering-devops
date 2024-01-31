@@ -26,5 +26,5 @@ if __name__ == "__main__":
             "username": username
         })
 
-    with open(f'{employeeId}.json', 'w') as file_name:
-        json.dump(dictionary, file_name)
+    with open(f'{employeeId}.json', 'w') as file:
+        json.dump(dictionary, file)
