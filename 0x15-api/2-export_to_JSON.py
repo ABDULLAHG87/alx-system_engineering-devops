@@ -20,11 +20,11 @@ if __name__ == "__main__":
     dictionary = {employeeId: []}
 
     for task in tasks:
-        dictonary[employeeId].append({
+        dictionary[employeeId].append({
             "task": task.get('title'),
             "completed": task.get('completed'),
             "username": username
         })
 
-    with open(f'{employeeId}.json', 'w') as file:
-        json.dump(dictionary, file)
+    with open(f'{employeeId}.json', 'w') as filename:
+        json.dump(dictionary, filename)
