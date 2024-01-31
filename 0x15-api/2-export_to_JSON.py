@@ -3,6 +3,7 @@
 
 import requests
 import sys
+import json
 
 if __name__ == "__main__":
     employeeId = sys.argv[1]
