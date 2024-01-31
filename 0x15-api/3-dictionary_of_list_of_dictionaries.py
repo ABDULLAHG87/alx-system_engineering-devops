@@ -28,7 +28,7 @@ if __name__ == "__main__":
                 "task": task.get('title'),
                 "completed": task.get('completed'),
                 "username": username
-        })
+            })
 
     with open('todo_all_employees.json', 'w') as filename:
         json.dump(dictionary, filename)
