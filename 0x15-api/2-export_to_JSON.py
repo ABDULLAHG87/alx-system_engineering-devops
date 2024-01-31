@@ -1,9 +1,10 @@
 #!/usr/bin/python3
 """A python script to accessing a REST API for todo list"""
 
+import json
 import requests
 import sys
-import json
+
 
 if __name__ == "__main__":
     employeeId = sys.argv[1]
