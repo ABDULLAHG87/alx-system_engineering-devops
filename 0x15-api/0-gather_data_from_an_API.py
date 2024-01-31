@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""A python script to accessing a REST API for todo list"""
 
 import requests
 import sys
