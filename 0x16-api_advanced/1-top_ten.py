@@ -4,7 +4,7 @@ Python script that displays number of subscribers for a given subreddit
 first 10 posts of the given reddit
 """
 
-from request import get
+from requests import get
 
 
 def top_ten(subreddit):
