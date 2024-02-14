@@ -3,7 +3,7 @@
 Python script that displays number of subscribers for a given subreddit
 """
 
-from request import get
+from requests import get
 
 
 def number_of_subscribers(subreddit):
@@ -14,12 +14,13 @@ def number_of_subscribers(subreddit):
     if subreddit is None or not isinstance(subreddit, str):
         return 0
 
-    user_agent - {'User-agent': 'Google Chrome version 121.0.6167.161'}
+    user_agent = {'User-agent': 'Google Chrome version 121.0.6167.161'}
     url = 'https://www.reddit.com/r/{}/about.json'.format(subreddit)
-    response = get(url, headers=user_agent)
-    results = response.json()
+    response = get(url, headers=user_agent, allow_redirects=False)
 
     try:
+        results = response.json()
         return results.get('data').get('subscribers')
+
     except Exception:
         return 0
