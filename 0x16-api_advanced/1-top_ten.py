@@ -15,7 +15,7 @@ def top_ten(subreddit):
     if subreddit is None or not isinstance(subreddit, str):
         print("None")
 
-    user_agent - {'User-agent': 'Google Chrome version 121.0.6167.161'}
+    user_agent = {'User-agent': 'Google Chrome version 121.0.6167.161'}
     params = {'limit': 10}
     url = 'https://www.reddit.com/r/{}/about.json'.format(subreddit)
     response = get(url, headers=user_agent, params=params)
